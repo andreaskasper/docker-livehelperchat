@@ -8,7 +8,7 @@ RUN apt-get update \
   && wget https://github.com/LiveHelperChat/livehelperchat/archive/refs/tags/3.69v.zip -O /tmp/source.zip \
   && unzip /tmp/source.zip -d /tmp/source/ \
   && mv /tmp/source/livehelperchat-3.69v/lhc_web/* /var/www/html/ \
-  && chown --recursive www-data:www-data html \
+  && chown --recursive www-data:www-data /var/wwww/html \
   && rm -rf /tmp/* \
   && apt-get clean
   
