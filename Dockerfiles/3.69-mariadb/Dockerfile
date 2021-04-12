@@ -10,5 +10,7 @@ RUN apt-get update \
   && mv /tmp/source/livehelperchat-3.69v/lhc_web/* /var/www/html/ \
   && rm -rf /tmp/* \
   && apt-get clean
+  
+RUN mariadb -e "CREATE DATABASE livehelperchat; CREATE USER 'lhc' IDENTIFIED BY 'lhc'; GRANT ALL privileges ON livehelperchat.* TO lhc@localhost; FLUSH PRIVILEGES; "
 
 EXPOSE 80
