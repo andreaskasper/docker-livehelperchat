@@ -1,5 +1,7 @@
 FROM php:8-apache
 
+LABEL MAINTAINER="Andreas Kasper <andreas.kasper@goo1.de>"
+
 RUN apt-get update \
   && apt-get -y install wget unzip \
   && wget https://github.com/LiveHelperChat/livehelperchat/archive/refs/tags/3.69v.zip -O /tmp/source.zip \
