@@ -9,3 +9,5 @@ RUN apt-get update \
   && mv /tmp/source/livehelperchat-3.69v/lhc_web/* /var/www/html/ \
   && rm -f /tmp/* \
   && apt-get clean
+
+EXPOSE 80
