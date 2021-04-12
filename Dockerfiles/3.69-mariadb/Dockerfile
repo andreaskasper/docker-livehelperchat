@@ -5,6 +5,9 @@ LABEL MAINTAINER="Andreas Kasper <andreas.kasper@goo1.de>"
 RUN apt-get update \
   && apt-get -y install wget unzip mariadb-server \
   && service mysql start \
+  && docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp \
+  && docker-php-ext-install -j$(nproc) gd \
+  && docker-php-ext-install pdo pdo_mysql \
   && wget https://github.com/LiveHelperChat/livehelperchat/archive/refs/tags/3.69v.zip -O /tmp/source.zip \
   && unzip /tmp/source.zip -d /tmp/source/ \
   && mv /tmp/source/livehelperchat-3.69v/lhc_web/* /var/www/html/ \
