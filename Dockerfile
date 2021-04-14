@@ -11,9 +11,9 @@ RUN apt-get update \
   && docker-php-ext-install pdo pdo_mysql \
   && docker-php-ext-install bcmath
 
-RUN wget https://github.com/LiveHelperChat/livehelperchat/archive/refs/tags/3.50v.zip -O /tmp/source.zip \
+RUN wget https://github.com/LiveHelperChat/livehelperchat/archive/refs/tags/3.51v.zip -O /tmp/source.zip \
   && unzip /tmp/source.zip -d /tmp/source/ \
-  && mv /tmp/source/livehelperchat-3.50v/lhc_web/* /var/www/html/ \
+  && mv /tmp/source/livehelperchat-3.51v/lhc_web/* /var/www/html/ \
   && chown --recursive www-data:www-data /var/www/html \
   && rm -rf /tmp/* \
   && apt-get clean
